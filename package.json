@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://navani25.github.io/navani25-luxe-visual-studio-main",
+ "homepage": "https://navani25.github.io/luxe-visual-studio-main",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

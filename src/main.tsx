@@ -7,8 +7,8 @@ const rootElement = document.getElementById("root");
 
 if (rootElement) {
   createRoot(rootElement).render(
-    <BrowserRouter basename="/navani25-luxe-visual-studio-main">
-      <App />
-    </BrowserRouter>
+   <BrowserRouter basename="/luxe-visual-studio-main">
+  <App />
+</BrowserRouter>
   );
 }
