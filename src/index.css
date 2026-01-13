@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Luxury Dark Theme */
+    --background: 0 0% 4%;
+    --foreground: 40 20% 95%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 35 30% 85%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 30 8% 15%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 30 25% 45%;
+    --accent-foreground: 40 20% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 30 25% 45%;
+
+    --radius: 0.25rem;
+
+    /* Custom Luxury Tokens */
+    --bronze: 30 25% 45%;
+    --champagne: 40 30% 90%;
+    --charcoal: 0 0% 8%;
+    --warm-gray: 30 5% 25%;
+    --cream: 40 30% 96%;
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Animations */
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Shadows */
+    --shadow-elegant: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+    --shadow-soft: 0 10px 40px -10px hsl(0 0% 0% / 0.3);
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 40 20% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-normal tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
+
+  .luxury-border {
+    @apply border border-border/50;
+  }
+
+  .glass-effect {
+    @apply bg-card/80 backdrop-blur-xl;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
