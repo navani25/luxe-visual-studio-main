@@ -19,6 +19,7 @@
             <div class="nav-links">
                 <a href="#hero">Home</a>
                 <a href="#projects">Projects</a>
+                <!-- Scrolls to bottom of this page -->
                 <a href="#contact">Contact</a>
             </div>
         </nav>
@@ -39,7 +40,7 @@
         </div>
     </section>
 
-    <!-- Projects (Teaser Section) -->
+    <!-- Projects (Teaser) -->
     <section id="projects" class="container">
         <div class="section-header reveal-up">
             <span class="overline">Selected Works</span>
@@ -83,23 +84,41 @@
         </div>
     </section>
 
-    <!-- Contact Teaser (View Only) -->
-    <section id="contact" class="container">
-        <div class="contact-simple reveal-up">
-            <span class="overline">Contact Us</span>
-            <p>Ready to visualize your next project? We are currently accepting new commissions.</p>
-            <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                <div>
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:hello@lumina.studio" style="font-size: 1.1rem; border-bottom: 1px solid var(--accent);">hello@lumina.studio</a>
-                </div>
-                <div>
-                    <span class="contact-label">Phone</span>
-                    <span style="font-size: 1.1rem;">+49 170 123 4567</span>
+    <!-- Contact Section (Integrated Professional Layout) -->
+    <section id="contact" class="container" style="padding-top: 5rem;">
+        <div class="section-header reveal-up">
+            <span class="overline">Get in touch</span>
+            <h2>Contact Us</h2>
+        </div>
+
+        <div class="contact-list reveal-up">
+            
+            <!-- Row 1: Email -->
+            <div class="contact-row">
+                <div class="c-label">Email</div>
+                <div class="c-content">
+                    <a href="mailto:hello@lumina.studio" class="c-link">hello@lumina.studio</a>
                 </div>
             </div>
-            <!-- TEXT UPDATED HERE: No longer implies a form -->
-            <a href="contact.html" class="btn">View Contact Info</a>
+
+            <!-- Row 2: Mobile -->
+            <div class="contact-row">
+                <div class="c-label">Mobile</div>
+                <div class="c-content">
+                    <span class="c-text">+49 170 123 4567</span>
+                </div>
+            </div>
+
+            <!-- Row 3: Social -->
+            <div class="contact-row">
+                <div class="c-label">Social</div>
+                <div class="c-content social-group">
+                    <a href="#" class="c-link-sm">Instagram</a>
+                    <span class="slash">/</span>
+                    <a href="#" class="c-link-sm">LinkedIn</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -116,10 +135,9 @@
             <div class="footer-col">
                 <h4>Navigation</h4>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#hero">Home</a></li>
                     <li><a href="projects.html">All Projects</a></li>
-                    <!-- TEXT UPDATED HERE -->
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
