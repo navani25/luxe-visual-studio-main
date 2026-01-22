@@ -155,52 +155,95 @@ nav {
 .project-card:hover .view-case { opacity: 1; transform: translateX(0); }
 
 /* --------------------------------------------------
-   7. CONTACT (UPDATED MINIMAL LAYOUT)
+   7. CONTACT (NEW PROFESSIONAL LAYOUT)
 -------------------------------------------------- */
-/* Used on Home Page */
+/* Used on Home Page Teaser */
 .contact-simple { text-align: left; border-top: 1px solid var(--border-light); padding-top: 4rem; }
 .contact-simple p { font-size: 1.5rem; color: var(--text-main); margin-bottom: 1rem; max-width: 600px; }
 .contact-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
 
-/* New Minimal Layout for contact.html */
-.contact-minimal {
+
+/* --- NEW CONTACT PAGE LAYOUT --- */
+
+.contact-list {
     display: flex;
     flex-direction: column;
-    gap: 4rem; /* Spacing between items */
     margin-top: 2rem;
+    margin-bottom: 5rem;
 }
 
-.contact-item {
+.contact-row {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 3rem 0; /* Creates generous breathing room */
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color 0.3s ease;
 }
 
-.contact-link-large {
+/* First item gets a top border too for closure */
+.contact-row:first-child {
+    border-top: 1px solid var(--border-light);
+}
+
+.c-label {
+    width: 30%; /* Fixed width ensures perfect alignment */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+}
+
+.c-content {
+    width: 70%;
+    display: flex;
+    align-items: baseline;
+}
+
+/* Main typography for contact details */
+.c-link, .c-text {
     font-family: var(--font-serif);
-    font-size: 2.5rem; /* Big impact font */
+    font-size: 2.5rem; /* Large, elegant serif font */
     color: var(--text-main);
-    border-bottom: 1px solid transparent;
-    transition: border-bottom 0.3s ease, color 0.3s ease;
+    line-height: 1.1;
 }
 
-.contact-link-large:hover {
+.c-link {
+    position: relative;
+    display: inline-block;
+}
+
+/* Hover underline effect */
+.c-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: var(--text-main);
+    transition: width 0.4s var(--easing);
+}
+
+.c-link:hover::after {
+    width: 100%;
+}
+
+/* Social Links - Smaller but clean */
+.c-link-sm {
+    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+.c-link-sm:hover {
     color: var(--accent);
-    border-bottom: 1px solid var(--accent);
 }
-
-.contact-text {
+.slash {
+    margin: 0 1rem;
     font-size: 1.2rem;
-    color: var(--text-main);
+    color: var(--text-muted);
 }
-
-.social-links-text {
-    font-size: 1.2rem;
-    display: flex;
-    gap: 0.5rem;
-}
-
-.divider { color: var(--accent); }
 
 /* --------------------------------------------------
    8. FOOTER & MODAL
@@ -233,5 +276,10 @@ footer { background: #E8E8E6; padding: 5rem 0 2rem; margin-top: 0; }
     .project-info { width: 100%; }
     .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
     .nav-links { display: none; }
-    .contact-link-large { font-size: 1.8rem; }
+    
+    /* Contact Mobile Layout */
+    .contact-row { flex-direction: column; gap: 1rem; padding: 2rem 0; }
+    .c-label { width: 100%; margin-bottom: 0.5rem; }
+    .c-content { width: 100%; }
+    .c-link, .c-text { font-size: 1.8rem; }
 }
