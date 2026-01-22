@@ -1,0 +1,383 @@
+/* --------------------------------------------------
+   1. RESET & VARIABLES
+-------------------------------------------------- */
+:root {
+    --bg-color: #F3F3F1; /* Soft Stone */
+    --text-main: #1A1A1A;
+    --text-muted: #666666;
+    --accent: #5C7A85; /* Slate Blue/Teal */
+    --white: #FFFFFF;
+    --border-light: rgba(0,0,0,0.1);
+    
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Manrope', sans-serif;
+    
+    --easing: cubic-bezier(0.22, 1, 0.36, 1); /* Luxury smooth ease */
+    --transition-slow: 1.2s var(--easing);
+    --transition-med: 0.8s var(--easing);
+    
+    --container-width: 1200px;
+    --gutter: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+ul { list-style: none; }
+
+/* --------------------------------------------------
+   2. TYPOGRAPHY & UTILS
+-------------------------------------------------- */
+h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    transition: all 0.4s var(--easing);
+    background: transparent;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background: var(--text-main);
+    color: var(--white);
+}
+
+.overline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.spacer-lg { height: 10rem; }
+.spacer-md { height: 5rem; }
+
+/* --------------------------------------------------
+   3. ANIMATION CLASSES
+-------------------------------------------------- */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity var(--transition-med), transform var(--transition-med);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.is-in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* --------------------------------------------------
+   4. NAVIGATION & FOOTER
+-------------------------------------------------- */
+nav {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-logo {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-main);
+}
+
+footer {
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-light);
+    margin-top: 5rem;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --------------------------------------------------
+   5. HOME / HERO
+-------------------------------------------------- */
+#hero {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 2rem;
+}
+
+.hero-text h1 {
+    font-size: clamp(3rem, 5vw, 5rem);
+    margin-bottom: 2rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 400px;
+}
+
+.hero-image-wrap {
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --------------------------------------------------
+   6. PROJECTS PAGE
+-------------------------------------------------- */
+.page-header {
+    padding: 5rem 0 3rem;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    margin-bottom: 8rem;
+    cursor: pointer;
+}
+
+/* Alternating Layout */
+.project-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-img-container {
+    flex: 1.2;
+    height: 500px;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--easing);
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    flex: 0.8;
+    pointer-events: none;
+}
+
+.project-info h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.view-case {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.4s var(--easing);
+}
+
+.project-card:hover .view-case {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --------------------------------------------------
+   7. MODAL
+-------------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 1000px;
+    background: var(--bg-color);
+    padding: 3rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    transform: translateY(30px);
+    transition: transform 0.6s var(--easing);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.modal-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: var(--font-serif);
+}
+
+/* --------------------------------------------------
+   8. CONTACT PAGE
+-------------------------------------------------- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin-top: 3rem;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-main);
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-bottom: 1px solid var(--accent);
+}
+
+/* --------------------------------------------------
+   9. RESPONSIVE
+-------------------------------------------------- */
+@media (max-width: 768px) {
+    #hero, .contact-grid, .modal-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-image-wrap { height: 50vh; }
+    
+    .project-card, .project-card:nth-child(even) {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .project-img-container { height: 300px; }
+    
+    .nav-links { display: none; } /* Simplified for demo */
+}

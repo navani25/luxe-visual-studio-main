@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina | Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="nav-logo"><a href="index.html">Lumina . Studio</a></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container page-header reveal-up">
+        <span class="overline">Selected Works</span>
+        <h1>Curated Portfolio</h1>
+    </div>
+
+    <section class="container">
+        
+        <!-- Project 1 -->
+        <article class="project-card reveal-up" 
+                 data-title="The Obsidian House" 
+                 data-cat="Residential" 
+                 data-desc="A moody, minimalistic approach to modern living in the Swiss Alps."
+                 data-img="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop">
+            <div class="project-img-container">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" class="project-img">
+            </div>
+            <div class="project-info">
+                <span class="overline">Residential</span>
+                <h3>The Obsidian House</h3>
+                <p>Architecture / Interior</p>
+                <div class="view-case">Click to explore</div>
+            </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal-up"
+                 data-title="Aesop Berlin" 
+                 data-cat="Commercial" 
+                 data-desc="Retail visualization for a high-end skincare brand focus on texture."
+                 data-img="https://images.unsplash.com/photo-1595405481745-7798725807f7?q=80&w=2070&auto=format&fit=crop">
+            <div class="project-img-container">
+                <img src="https://images.unsplash.com/photo-1595405481745-7798725807f7?q=80&w=2070&auto=format&fit=crop" class="project-img">
+            </div>
+            <div class="project-info">
+                <span class="overline">Commercial</span>
+                <h3>Aesop Berlin</h3>
+                <p>Retail Design</p>
+                <div class="view-case">Click to explore</div>
+            </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal-up"
+                 data-title="Nordic Loft" 
+                 data-cat="Residential" 
+                 data-desc="Open plan living space visualization focusing on sustainable materials."
+                 data-img="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop">
+            <div class="project-img-container">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop" class="project-img">
+            </div>
+            <div class="project-info">
+                <span class="overline">Residential</span>
+                <h3>Nordic Loft</h3>
+                <p>Interior Styling</p>
+                <div class="view-case">Click to explore</div>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- Modal HTML (Hidden by default) -->
+    <div class="modal-overlay" id="projectModal">
+        <button class="modal-close">✕</button>
+        <div class="modal-content">
+            <img src="" alt="" class="modal-img" id="m-img">
+            <div class="modal-details">
+                <span class="overline" id="m-cat"></span>
+                <h2 id="m-title" style="margin-bottom: 1.5rem;"></h2>
+                <p id="m-desc" style="color: var(--text-muted);"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container">
+        <p>&copy; 2024 Lumina Studio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
